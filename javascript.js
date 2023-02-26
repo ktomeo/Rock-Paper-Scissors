@@ -11,6 +11,29 @@ function computerSelection() {
     }
 }
 
-function playRound(playerSelection, computerSelection) {
+const playerInput = prompt()
+let playerSelection = playerInput.toUpperCase()
 
+
+function playRound(playerSelection, computerSelection) {
+    if (
+        (playerSelection === 'ROCK' && computerSelection === 'SCISSORS') ||
+        (playerSelection === 'PAPER' && computerSelection === 'ROCK') ||
+        (playerSelection === 'SCISSORS' && computerSelection === 'PAPER')) {
+        return 'You win!';
+        }
+    else if (
+        (playerSelection === 'SCISSORS' && computerSelection === 'ROCK') ||
+        (playerSelection === 'ROCK' && computerSelection === 'PAPER') ||
+        (playerSelection === 'PAPER' && computerSelection === 'SCISSORS')) {
+        return 'You lose!';
+        }
+    else {
+        return 'It\'s a draw!'
+    }   
 }
+
+console.log(playerSelection)
+console.log(computerSelection())
+console.log(playRound(playerSelection, computerSelection))
+
