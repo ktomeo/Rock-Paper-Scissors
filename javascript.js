@@ -1,4 +1,4 @@
-function computerSelection() {
+function getComputerChoice() {
     let x = Math.floor(Math.random() * 3);
     if (x === 0) {
         return 'ROCK';
@@ -11,12 +11,13 @@ function computerSelection() {
     }
 }
 
-const playerInput = prompt()
-let playerSelection = playerInput.toUpperCase()
+let playerSelection = prompt().toUpperCase()
 
-
-function playRound(playerSelection, computerSelection) {
-    if (
+function playRound() {
+    let computerSelection = getComputerChoice();
+    if (playerSelection === computerSelection) {
+        return 'It\'s a tie!';
+    } else if (
         (playerSelection === 'ROCK' && computerSelection === 'SCISSORS') ||
         (playerSelection === 'PAPER' && computerSelection === 'ROCK') ||
         (playerSelection === 'SCISSORS' && computerSelection === 'PAPER')) {
@@ -29,11 +30,10 @@ function playRound(playerSelection, computerSelection) {
         return 'You lose!';
         }
     else {
-        return 'It\'s a draw!'
-    }   
+        return 'Please enter \'Rock, Paper, or Scissors\''
+    }
 }
 
 console.log(playerSelection)
-console.log(computerSelection())
-console.log(playRound(playerSelection, computerSelection))
-
+console.log(getComputerChoice())
+console.log(playRound())
