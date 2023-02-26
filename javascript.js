@@ -11,10 +11,10 @@ function getComputerChoice() {
     }
 }
 
-let playerSelection = prompt().toUpperCase()
+let playerSelection = prompt().toUpperCase();
+let computerSelection = getComputerChoice();
 
 function playRound() {
-    let computerSelection = getComputerChoice();
     if (playerSelection === computerSelection) {
         return 'It\'s a tie!';
     } else if (
@@ -35,5 +35,5 @@ function playRound() {
 }
 
 console.log(playerSelection)
-console.log(getComputerChoice())
+console.log(computerSelection)
 console.log(playRound())
