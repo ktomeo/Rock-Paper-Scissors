@@ -11,29 +11,34 @@ function getComputerChoice() {
     }
 }
 
-let playerSelection = prompt().toUpperCase();
+let playerSelection = prompt('Rock, Paper, or Scissors?').toUpperCase();
 let computerSelection = getComputerChoice();
 
 function playRound() {
     if (playerSelection === computerSelection) {
-        return 'It\'s a tie!';
+        return alert('It\'s a draw!')
     } else if (
         (playerSelection === 'ROCK' && computerSelection === 'SCISSORS') ||
         (playerSelection === 'PAPER' && computerSelection === 'ROCK') ||
         (playerSelection === 'SCISSORS' && computerSelection === 'PAPER')) {
-        return 'You win!';
+        return alert('You win!');
         }
     else if (
         (playerSelection === 'SCISSORS' && computerSelection === 'ROCK') ||
         (playerSelection === 'ROCK' && computerSelection === 'PAPER') ||
         (playerSelection === 'PAPER' && computerSelection === 'SCISSORS')) {
-        return 'You lose!';
+        return alert('You lose!');
         }
     else {
-        return 'Please enter \'Rock, Paper, or Scissors\''
+        return alert('Please enter \'Rock, Paper, or Scissors\'');
     }
 }
 
 console.log(playerSelection)
 console.log(computerSelection)
 console.log(playRound())
+
+for (let i = 0; i < 5; i++) {
+
+ }
+ 
