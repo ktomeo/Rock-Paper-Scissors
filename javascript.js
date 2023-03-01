@@ -11,7 +11,7 @@ function getComputerChoice() {
     }
 }
 
-
+let counter = {computer: 0, player: 0};
 
 function playRound() {
     let playerSelection = prompt('Rock, Paper, or Scissors?').toUpperCase();
@@ -24,12 +24,14 @@ function playRound() {
         (playerSelection === 'ROCK' && computerSelection === 'SCISSORS') ||
         (playerSelection === 'PAPER' && computerSelection === 'ROCK') ||
         (playerSelection === 'SCISSORS' && computerSelection === 'PAPER')) {
+        counter.player += 1;
         return 'Win'
         }
     else if (
         (playerSelection === 'SCISSORS' && computerSelection === 'ROCK') ||
         (playerSelection === 'ROCK' && computerSelection === 'PAPER') ||
         (playerSelection === 'PAPER' && computerSelection === 'SCISSORS')) {
+        counter.computer += 1;
         return 'Lose'
         }
     else {
@@ -39,4 +41,5 @@ function playRound() {
 
 for (let i = 0; i < 5; i++) {
     console.log(playRound());
+    console.log(counter)
 }
