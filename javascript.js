@@ -24,14 +24,14 @@ function playRound() {
         (playerSelection === 'ROCK' && computerSelection === 'SCISSORS') ||
         (playerSelection === 'PAPER' && computerSelection === 'ROCK') ||
         (playerSelection === 'SCISSORS' && computerSelection === 'PAPER')) {
-        counter.player += 1;
+        counter.player++;
         return 'Win'
         }
     else if (
         (playerSelection === 'SCISSORS' && computerSelection === 'ROCK') ||
         (playerSelection === 'ROCK' && computerSelection === 'PAPER') ||
         (playerSelection === 'PAPER' && computerSelection === 'SCISSORS')) {
-        counter.computer += 1;
+        counter.computer++;
         return 'Lose'
         }
     else {
@@ -41,5 +41,5 @@ function playRound() {
 
 for (let i = 0; i < 5; i++) {
     console.log(playRound());
-    console.log(counter)
+    console.log(counter);
 }
