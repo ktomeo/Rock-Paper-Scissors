@@ -39,7 +39,7 @@ function playRound() {
 }
 
 for (let i = 0; (i < 1000); i++) {
-    console.log(playRound());
+    playRound();
     console.log(counter);
     if (counter.Computer === 5) {
         break;
