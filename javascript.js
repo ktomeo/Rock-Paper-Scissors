@@ -11,8 +11,7 @@ function getComputerChoice() {
     }
 }
 
-let counterComputer = 0;
-let counterPlayer = 0;
+let counter = {Computer: 0, Player: 0}
 
 function playRound() {
     let playerSelection = prompt('Rock, Paper, or Scissors?').toUpperCase();
@@ -25,13 +24,13 @@ function playRound() {
         (playerSelection === 'ROCK' && computerSelection === 'SCISSORS') ||
         (playerSelection === 'PAPER' && computerSelection === 'ROCK') ||
         (playerSelection === 'SCISSORS' && computerSelection === 'PAPER')) {
-        counterPlayer++;
+        counter.Player++;
         return alert('Win')
         } else if (
         (playerSelection === 'SCISSORS' && computerSelection === 'ROCK') ||
         (playerSelection === 'ROCK' && computerSelection === 'PAPER') ||
         (playerSelection === 'PAPER' && computerSelection === 'SCISSORS')) {
-        counterComputer++;
+        counter.Computer++;
         return alert('Lose')
         }
     else {
@@ -41,19 +40,18 @@ function playRound() {
 
 for (let i = 0; (i < 1000); i++) {
     console.log(playRound());
-    console.log(counterPlayer);
-    console.log(counterComputer);
-    if (counterComputer === 5) {
+    console.log(counter);
+    if (counter.Computer === 5) {
         break;
-    } else if (counterPlayer === 5) {
+    } else if (counter.Player === 5) {
         break;
     }
 }
 
 function winCondition() {
-    if (counterComputer === 5) {
+    if (counter.Computer === 5) {
         return alert('You lost to the computer!');
-    } else if (counterPlayer === 5) {
+    } else if (counter.Player === 5) {
         return alert('You beat the computer!');
     }
 }
