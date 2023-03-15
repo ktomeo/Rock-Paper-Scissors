@@ -54,6 +54,3 @@ function winCondition() {
     } else if (counter.Player === 5) {
         return alert('You beat the computer!');
     }
-}
-
-console.log (winCondition());
