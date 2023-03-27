@@ -11,51 +11,47 @@ function getComputerChoice() {
     }
 }
 
+let countingCompScores = document.querySelector('.scoresComp');
+let countingPlayScores = document.querySelector('.scoresPlay');
+
 let counterComputer = 0;
 let counterPlayer = 0;
 
-function playRound() {
-    let playerSelection = prompt('Rock, Paper, or Scissors?').toUpperCase();
+const btn = document.querySelector('#btn');
+btn.addEventListener('click', playRound);
+
+
+function playRound(playerSelection) {
     let computerSelection = getComputerChoice();
-    console.log(playerSelection)
-    console.log(computerSelection)
+    const statement = document.querySelector('.statement')
     if (playerSelection === computerSelection) {
-        return alert('Tie')
+        statement.textContent = 'Tie'
     } else if (
         (playerSelection === 'ROCK' && computerSelection === 'SCISSORS') ||
         (playerSelection === 'PAPER' && computerSelection === 'ROCK') ||
         (playerSelection === 'SCISSORS' && computerSelection === 'PAPER')) {
         counterPlayer++;
-        return alert('Win')
+        updatePlayDisplay();
+        statement.textContent = 'Win'
         } else if (
         (playerSelection === 'SCISSORS' && computerSelection === 'ROCK') ||
         (playerSelection === 'ROCK' && computerSelection === 'PAPER') ||
         (playerSelection === 'PAPER' && computerSelection === 'SCISSORS')) {
         counterComputer++;
-        return alert('Lose')
+        updateCompDisplay();
+        statement.textContent = 'Lose'
         }
-    else {
-        return alert('Try again')
-    }
-}
-
-for (let i = 0; (i < 1000); i++) {
-    console.log(playRound());
-    console.log(counterPlayer);
-    console.log(counterComputer);
     if (counterComputer === 5) {
-        break;
+            return alert('You lost to the computer!');
     } else if (counterPlayer === 5) {
-        break;
+            return alert('You beat the computer!');
     }
 }
 
-function winCondition() {
-    if (counterComputer === 5) {
-        return alert('You lost to the computer!');
-    } else if (counterPlayer === 5) {
-        return alert('You beat the computer!');
-    }
+function updateCompDisplay () {
+    countingCompScores.innerHTML = counterComputer;
 }
 
-console.log (winCondition());
+function updatePlayDisplay () {
+    countingPlayScores.innerHTML = counterPlayer;
+}
