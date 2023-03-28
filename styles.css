@@ -1,0 +1,10 @@
+body {
+    font-family: monospace;
+    background-color: black;
+    color: white;
+}
+
+.tools {
+    width: 300px;
+    height: 300px;
+}

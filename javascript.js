@@ -24,6 +24,7 @@ btn.addEventListener('click', playRound);
 function playRound(playerSelection) {
     let computerSelection = getComputerChoice();
     const statement = document.querySelector('.statement')
+    console.log(playerSelection);
     if (playerSelection === computerSelection) {
         statement.textContent = 'Tie'
     } else if (

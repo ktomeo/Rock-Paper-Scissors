@@ -4,15 +4,26 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
     <script src="javascript.js" defer></script>
     <title>Kai's Rock Paper Scissors</title>
 </head>
 <body>
-    <div class="scoresComp"></div>
-    <div class="scoresPlay"></div>
+    <div class="scores">
+        <div class="computerArea">
+            <div class="computerStatement">Computer:</div>
+            <div class="scoresComp"></div>
+        </div>
+        <div class="playerArea">
+            <div class="playerStatement">Player:</div>
+            <div class="scoresPlay"></div>
+        </div>
+    </div>
     <div class="statement"></div>
-    <button onclick="playRound('ROCK')">Rock</button>
-    <button onclick="playRound('PAPER')">Paper</button>
-    <button onclick="playRound('SCISSORS')">Scissors</button>
+    <div class="btn">
+        <button onclick="playRound('ROCK')"><img class="tools" src="./images/rock.png" alt="A white rock."></button>
+        <button onclick="playRound('PAPER')"><img class="tools" src="./images/paper.png" alt="White paper"></button>
+        <button onclick="playRound('SCISSORS')"><img class="tools" src="./images/scissors.png" alt="A white pair of scissors."></button>
+    </div>
 </body>
 </html>
