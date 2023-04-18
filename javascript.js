@@ -1,3 +1,14 @@
+let counterComputer = 0;
+let counterPlayer = 0;
+
+let middleContainer = document.getElementById('mid');
+    middleContainer.style.opacity = 0;
+    middleContainer.style.transform = 'scale(0)';
+
+let endContainer = document.getElementById('end')
+    endContainer.style.opacity = 0;
+    endContainer.style.transform = 'scale(0)';
+
 function getComputerChoice() {
     let x = Math.floor(Math.random() * 3);
     if (x === 0) {
@@ -14,8 +25,6 @@ function getComputerChoice() {
 let countingCompScores = document.querySelector('.scoresComp');
 let countingPlayScores = document.querySelector('.scoresPlay');
 
-let counterComputer = 0;
-let counterPlayer = 0;
 
 
 function playRound(playerSelection) {
@@ -40,9 +49,18 @@ function playRound(playerSelection) {
         statement.textContent = 'Lose'
         }
     if (counterComputer === 5) {
-            return alert('You lost to the computer!');
+        middleContainer.style.opacity = 0;
+        middleContainer.style.transform = 'scale(0)';
+        endContainer.style.opacity = 100;
+        endContainer.style.transform - 'scale(0)';
+        return alert('You lost to the computer!');
+
     } else if (counterPlayer === 5) {
-            return alert('You beat the computer!');
+        middleContainer.style.opacity = 0;
+        middleContainer.style.transform = 'scale(0)';
+        endContainer.style.opacity = 100;
+        endContainer.style.transform - 'scale(0)';
+        return alert('You beat the computer!');
     }
 }
 
@@ -57,9 +75,6 @@ function updatePlayDisplay () {
 let startContainer = document.getElementById('beg');
 let btn = document.querySelector("#startbutton");
 
-let middleContainer = document.getElementById('mid');
-    middleContainer.style.opacity = 0;
-    middleContainer.style.transform = 'scale(0)';
 
 btn.addEventListener('click', function(){
     startContainer.style.opacity = 0;
