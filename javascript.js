@@ -25,7 +25,13 @@ function getComputerChoice() {
 let countingCompScores = document.querySelector('.scoresComp');
 let countingPlayScores = document.querySelector('.scoresPlay');
 
+function updateCompDisplay () {
+    countingCompScores.innerHTML = counterComputer;
+}
 
+function updatePlayDisplay () {
+    countingPlayScores.innerHTML = counterPlayer;
+}
 
 function playRound(playerSelection) {
     let computerSelection = getComputerChoice();
@@ -64,13 +70,7 @@ function playRound(playerSelection) {
     }
 }
 
-function updateCompDisplay () {
-    countingCompScores.innerHTML = counterComputer;
-}
 
-function updatePlayDisplay () {
-    countingPlayScores.innerHTML = counterPlayer;
-}
 
 let startContainer = document.getElementById('beg');
 let btn = document.querySelector("#startbutton");
