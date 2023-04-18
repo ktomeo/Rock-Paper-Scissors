@@ -9,21 +9,29 @@
     <title>Kai's Rock Paper Scissors</title>
 </head>
 <body>
-    <div class="scores">
-        <div class="computerArea">
-            <div class="computerStatement">Computer:</div>
-            <div class="scoresComp"></div>
-        </div>
-        <div class="playerArea">
-            <div class="playerStatement">Player:</div>
-            <div class="scoresPlay"></div>
-        </div>
+    <div id="beg">
+        <h1>Shall we play a game?</h1>
+        <button id="startbutton">Global Thermonuclear War</button>
     </div>
-    <div class="statement"></div>
-    <div class="btn">
-        <button onclick="playRound('ROCK')"><img class="tools" src="./images/rock.png" alt="A white rock."></button>
-        <button onclick="playRound('PAPER')"><img class="tools" src="./images/paper.png" alt="White paper"></button>
-        <button onclick="playRound('SCISSORS')"><img class="tools" src="./images/scissors.png" alt="A white pair of scissors."></button>
+    <div id="mid">
+        <div class="scores">
+            <div class="computerArea">
+                <div class="computerStatement">Computer:</div>
+                <div class="scoresComp"></div>
+            </div>
+            <div class="playerArea">
+                <div class="playerStatement">Player:</div>
+                <div class="scoresPlay"></div>
+            </div>
+        </div>
+        <div class="statement"></div>
+        <div class="btn">
+            <button onclick="playRound('ROCK')"><img class="tools" src="./images/rock.png" alt="A white rock."></button>
+            <button onclick="playRound('PAPER')"><img class="tools" src="./images/paper.png" alt="White paper"></button>
+            <button onclick="playRound('SCISSORS')"><img class="tools" src="./images/scissors.png" alt="A white pair of scissors."></button>
+    </div>
+    </div>
+    <div id="end">
     </div>
 </body>
 </html>

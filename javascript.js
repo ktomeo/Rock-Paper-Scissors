@@ -17,9 +17,6 @@ let countingPlayScores = document.querySelector('.scoresPlay');
 let counterComputer = 0;
 let counterPlayer = 0;
 
-const btn = document.querySelector('#btn');
-btn.addEventListener('click', playRound);
-
 
 function playRound(playerSelection) {
     let computerSelection = getComputerChoice();
@@ -56,3 +53,20 @@ function updateCompDisplay () {
 function updatePlayDisplay () {
     countingPlayScores.innerHTML = counterPlayer;
 }
+
+let startContainer = document.getElementById('beg');
+let btn = document.querySelector("#startbutton");
+
+let middleContainer = document.getElementById('mid');
+    middleContainer.style.opacity = 0;
+    middleContainer.style.transform = 'scale(0)';
+
+btn.addEventListener('click', function(){
+    startContainer.style.opacity = 0;
+    startContainer.style.transform = 'scale(0)';
+    window.setTimeout(function(){
+        startContainer.style.display = 'none';
+    },700); 
+    middleContainer.style.opacity = 100;
+    middleContainer.style.transform = 'scale(1)';
+});
